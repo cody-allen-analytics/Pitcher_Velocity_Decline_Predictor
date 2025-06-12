@@ -1,0 +1,4 @@
+# mlflow.yml
+tracking_uri: http://localhost:5000
+artifact_root: ./mlruns
+registry_uri: sqlite:///mlflow.db
