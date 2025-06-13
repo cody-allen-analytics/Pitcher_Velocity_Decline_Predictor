@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  mlflow:
+    image: mlflow/mlflow
+    ports: ["5000:5000"]
+    volumes: ["./mlflow:/mlflow"]
+
+  web:
+    build: ./src/app
+    ports: ["8000:8000"]
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    depends_on: [mlflow]
