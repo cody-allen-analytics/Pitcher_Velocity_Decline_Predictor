@@ -50,8 +50,22 @@ Access services:
 - Dashboard: `http://localhost:8501`
 
 ## Project Structure
-```text
-(Insert tree diagram from above)
+```mermaid
+graph TD
+    A[mlb-velocity-decline-predictor] --> B[.github/workflows]
+    A --> C[data]
+    C --> C1[raw]
+    C --> C2[processed]
+    A --> D[deployment]
+    A --> E[models]
+    E --> E1[production]
+    A --> F[src]
+    F --> F1[app]
+    F1 --> F11[api.py]
+    F1 --> F12[schemas.py]
+    F --> F2[models]
+    F2 --> F21[train.py]
+    F --> F3[utils]
 ```
 
 ## Contributing
